@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculator</title>
+        <script src="calculator.js"></script>
+          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style>
+        table, th, td {
+        border: 3px solid black;
+            }
+    </style>
+
+    
+</head>
+<body>       
+        <table >
+            <br>
+            <tr>
+                
+                    <input type="text" id="display" value='' maxlength="16">
+            </tr>
+            
+            
+            <tr>
+                
+                    <td ><input type="button" id="1" value='1' onclick = "myOperand('1');" class="btn btn-default"></td>
+                    <td ><input type="button" id="2" value='2' onclick = "myOperand('2');" class="btn btn-default"></td>            
+                    <td ><input type="button" id="3" value='3' onclick = "myOperand('3');" class="btn btn-default"></td>
+                    <td ><input type="button" id="+" value='+' onclick = "myOperator('+');"class="btn btn-warning"></td>
+            </tr>
+            <tr>
+                    <td ><input type="button" id="4" value='4' onclick = "myOperand('4');" class="btn btn-default"></td>
+                    <td ><input type="button" id="5" value='5' onclick = "myOperand('5');" class="btn btn-default"></td>             
+                    <td ><input type="button" id="6" value='6' onclick = "myOperand('6');" class="btn btn-default"></td>
+                    <td ><input type="button" id="-" value='-' onclick = "myOperator('-');" class="btn btn-warning"></td>
+            </tr>
+            <tr>
+                    <td ><input type="button" id="7" value='7' onclick = "myOperand('7');" class="btn btn-default"></td>
+                    <td ><input type="button" id="8" value='8' onclick = "myOperand('8');" class="btn btn-default"></td>             
+                    <td ><input type="button" id="9" value='9' onclick = "myOperand('9');" class="btn btn-default"></td>
+                    <td ><input type="button" id="*" value='*' onclick = "myOperator('*');" class="btn btn-warning"></td>
+           </tr>
+            <tr>
+                    <td ><input type="button" id="c" value='c' onclick = "clearAll();" class="btn btn-info"></td>
+                    <td ><input type="button" id="0" value='0' onclick = "myOperand('0');" class="btn btn-default"></td>            
+                    <td ><input type="button" id="=" value='=' onclick = "calculation();" class="btn btn-success"></td>
+                    <td ><input type="button" id="/" value='/' onclick = "myOperator('/');" class="btn btn-warning"></td>
+            </tr>
+                
+            
+        </table>
+    
+</body>
+    
+</html>

@@ -1,0 +1,72 @@
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"> </script>
+<script>
+    angular.module("filter", [])
+            .controller("myCtrl", function($scope){
+                        $scope.users = [
+                        {no:1,name:"Harsha",ph:"1234567890",place:"NJ"},
+                        {no:2,name:"Sri",ph:"2134534434",place:"TX"},
+                        {no:3,name:"Kota",ph:"6486464483",place:"NY"},
+                        {no:4,name:"Abhi",ph:"9648393576",place:"CA"},
+                        {no:5,name:"Sruthi",ph:"4386964564",place:"MA"},
+                        {no:6,name:"John",ph:"6423610876",place:"CA"},
+                        {no:7,name:"Tom",ph:"2398749287",place:"MA"},
+                        {no:8,name:"Rock",ph:"2837287402",place:"CA"},
+                        {no:9,name:"Robert",ph:"0987654321",place:"MA"},
+                        ];
+        $scope.myOrder = function(x){
+                $scope.property = x;
+        };
+        $scope.mySearch = function(y){
+                $scope.text = y; 
+        };
+                        });
+</script>
+</head>
+<body>
+<div ng-app="filter" ng-controller="myCtrl">
+    <table border="1">
+     <tr>
+        <th>S.No<button ng-click="myOrder('no')">Order</button></th>
+        <th>Name<button ng-click="myOrder('name')">Order</button></th>
+        <th>ph<button ng-click="myOrder('ph')">Order</button></th>
+        <th>place<button ng-click="myOrder('place')">Order</button></th>
+    </tr>
+    <tr ng-repeat="x in users | orderBy:property">
+        <td>{{x.no}}</td>
+        <td>{{x.name}}</td>
+        <td>{{x.ph}}</td>
+        <td>{{x.place}}</td>
+    </tr>
+    </table>
+    
+    <br>
+    
+    Search : <input type = "text" ng-model="text" >
+    
+    <br>
+    <br>
+    
+    <table border="1">
+     <tr>
+        <th>S.No</th>
+         <th>Name</th>
+        <th>ph</th>
+        <th>place</th>
+    </tr>
+    <tr ng-repeat="x in users | filter:text ">
+        <td>{{x.no}}</td>
+        <td>{{x.name}}</td>
+        <td>{{x.ph}}</td>
+        <td>{{x.place}}</td>
+    </tr>
+    </table>
+<ul>
+    <li ng-repeat="x in users | currency">
+    {{x.no}}
+    </li>
+</ul>
+    </div>
+</body>
+</html> 
